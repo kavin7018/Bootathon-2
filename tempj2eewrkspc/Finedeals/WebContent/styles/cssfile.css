@@ -5,3 +5,9 @@
   	padding: 10px;
   	text-align:centre;
 }
+
+.align-centre{
+	text-align: centre;
+	color:red;
+	font-size:80px;
+}

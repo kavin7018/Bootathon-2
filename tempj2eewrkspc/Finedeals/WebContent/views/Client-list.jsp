@@ -10,6 +10,7 @@
 	<title>Insert title here</title>
 	<link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css"/>
+	<link href="../styles/cssfile.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -21,14 +22,19 @@
 		}
 	%>
 
-
-				
 	 <div class="container">
-	 	 <div class="float-right">
+	 	 <div class="text-right">
 				<a href="${pageContext.request.contextPath}/Logout.jsp">Logout</a>
 		 </div>
 		 
-	 	<h4>Client Records</h4>
+	 	<div class="text-center">
+	 		<h4>Client Records</h4>
+	 	</div>
+	 	
+	 	<div class="text-left"">
+	 		<a href="${pageContext.request.contextPath}/Home.jsp">&#8592 Back</a>
+	 	</div>
+	 	
 	 	<p>${Message}</p>
 	 	<button class="btn btn-primary" onclick="window.location.href='views/Client-add.jsp'">Add Client</button>
 	 

@@ -31,8 +31,7 @@ a{
 		}
 	%>
 	
-	<!-- <a href="index.jsp">Login/Sign-Up</a> -->
-	<a href="temp.jsp">Home page</a>
+	<a href="index.jsp">Login/Sign-Up</a>
 	
 </body>
 </html>

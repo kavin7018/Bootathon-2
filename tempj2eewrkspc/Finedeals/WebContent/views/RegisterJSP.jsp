@@ -17,7 +17,8 @@
 		}
 	%> 
  	<div class="container" id="registerjsp">
-		<h3>Registration Form</h3>
+ 		<div class="align-centre">
+		<h3>Registration Form</h3></div>
 		<form action="${pageContext.request.contextPath}/RegistrationController" method="post">
 			<input type="text" name="username" placeholder="Enter UserName"><br></br>
 			<input type="email" name="email" placeholder="Enter email"><br></br>

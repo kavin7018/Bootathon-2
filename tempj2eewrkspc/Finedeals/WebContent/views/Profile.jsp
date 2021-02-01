@@ -11,7 +11,7 @@
 <body>
 	<%
 		String mail = (String)session.getAttribute("email");
-		if(mail.isEmpty() || mail==""){
+		if(mail==null || mail=="" || mail.isEmpty()){
 			response.sendRedirect("index.jsp");
 		}
 	%>
@@ -29,7 +29,7 @@
 		<p>Password : ${client.password}</p>
 		<p>DOB : ${client.dob}</p>
 		<p>Gender : ${client.gender}</p>
-		<p>UserName : ${client.country}</p>
+		<p>Country : ${client.country}</p>
 		
 	</div>
 		

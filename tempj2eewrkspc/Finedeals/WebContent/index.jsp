@@ -23,7 +23,7 @@
 		String status = request.getParameter("status");
 		if(status!=null){
 			if(status.equals("Registered")){
-				out.print("Registration Successfull");
+				out.print("Registration Successful");
 			}
 			if(status.equals("False")){
 				out.print("Invalid Credentials");
