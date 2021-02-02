@@ -42,7 +42,7 @@ public class RegistrationController extends HttpServlet {
 		register.setDob(dob);
 		
 		if(registerDAO.AddClient(register)) {
-			resp.sendRedirect("index.jsp?status=Registered");
+			resp.sendRedirect("Login.jsp?status=Registered");
 		}
 		else{
 			resp.sendRedirect("RegisterJSP.jsp");

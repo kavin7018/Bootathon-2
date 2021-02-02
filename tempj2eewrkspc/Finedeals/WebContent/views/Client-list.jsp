@@ -10,7 +10,7 @@
 	<title>Insert title here</title>
 	<link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css"/>
-	<link href="../styles/cssfile.css" rel="stylesheet"/>
+	<link href="styles/cssfile.css" rel="stylesheet"/>
 </head>
 
 <body>

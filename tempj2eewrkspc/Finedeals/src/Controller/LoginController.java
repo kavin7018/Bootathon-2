@@ -44,10 +44,10 @@ public class LoginController extends HttpServlet {
 			resp.sendRedirect("ClientController?action=home");
 		}
 		else if(status=="False") {
-			resp.sendRedirect("index.jsp?status=False");
+			resp.sendRedirect("Login.jsp?status=False");
 		}
 		else if(status=="Error"){
-			resp.sendRedirect("index.jsp?status=Error");
+			resp.sendRedirect("Login.jsp?status=Error");
 		}
 	}
 	

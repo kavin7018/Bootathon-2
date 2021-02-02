@@ -18,15 +18,22 @@ float-right{
 
 	<%
 		String mail = (String)session.getAttribute("email");
-		if(mail.isEmpty() || mail==""){
+		if(mail==null || mail=="" || mail.isBlank()){
 			response.sendRedirect("index.jsp");
 		}
 	%>
 
 	 <div class="container">
-	 	<div class="float-right">
+	 	<div>
 				<a href="${pageContext.request.contextPath}/Logout.jsp">Logout</a>
 	 	</div>
+	 	
+	 	
+	 	<% if(  ((String)session.getAttribute("email")).equals("admin@finedeals.com")  ){%>
+	 	
+	 	<a href="${pageContext.request.contextPath}/AdminController?action=LIST">Client Records</a>
+	 	
+		<% }%>
 	 	<p>Inside Client Panel</p>
 	 	<a href="${pageContext.request.contextPath}/ClientController?action=LIST&email=${email}">My Profile</a>
 	 </div>
