@@ -5,17 +5,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import Entity.Clients;
+import Entity.Offers;
 import Entity.Register;
 import Util.DBConnectionUtil;
 
 public class ClientDAOImpl implements ClientDAO {
 	Clients clients=null;
+	List<Offers> list = null;
+	Offers offers = null;
 	String Query=null;
 	Connection connection=null;
 	PreparedStatement preparedstatement = null;
 	Statement statement=null;
+	
 
 	@Override
 	public Clients get_details_myprofile(String email) {
@@ -61,4 +67,29 @@ public class ClientDAOImpl implements ClientDAO {
 		return flag;
 	}
 
+	@Override
+	public List<Offers> getOffers() {
+		list = new ArrayList<>();
+		try {
+			Query = "select * from coupons";
+			connection = DBConnectionUtil.OpenConnection();
+			statement = connection.createStatement();
+			ResultSet res = statement.executeQuery(Query);
+			while(res.next()) {
+				offers = new Offers();
+				String company = res.getString("company");
+				offers.setCompany(company);
+				offers.setUrl(res.getString("url"));
+				offers.setCode(res.getString("code"));
+				offers.setDesc(res.getString("description"));
+				offers.setVotes(res.getString("votes"));
+				list.add(offers);
+			}
+		} 
+		catch (SQLException e) {
+			System.out.println("Error at ClientDAoImpl, get_details_myprofile : "+e);
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

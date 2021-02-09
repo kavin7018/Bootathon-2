@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Entity.Clients;
+import Entity.Offers;
 import Entity.Register;
 import dao.AdminDAO;
 import dao.AdminDAOImpl;
+import dao.ClientDAO;
+import dao.ClientDAOImpl;
 import dao.RegisterDAO;
 import dao.RegisterDAOImpl;
 
@@ -21,6 +24,7 @@ public class AdminController extends HttpServlet{
 	private static final long serialVersionUID = 3054414477752161268L;
 	AdminDAO adminDAO = null;
 	RegisterDAO registerDAO = null;
+	ClientDAO clientdao = null;
 	List<Clients> list = null;
 	RequestDispatcher dispatch = null;
 	Clients client = null;
@@ -39,6 +43,9 @@ public class AdminController extends HttpServlet{
 		}
 		
 		switch(action) {
+		case "Front":
+			getFrontPage(req,resp);
+			break;
 		case "LIST":
 			ListAllClients(req,resp);
 			break;
@@ -89,6 +96,14 @@ public class AdminController extends HttpServlet{
 			}
 		}
 		ListAllClients(req,resp);
+	}
+	
+	public void getFrontPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		clientdao = new ClientDAOImpl();
+		List<Offers> offers = clientdao.getOffers(); 
+		req.setAttribute("offers",offers);
+		dispatch = req.getRequestDispatcher("HomePage.jsp"); 
+		dispatch.forward(req,resp);
 	}
 	
 	public void ListAllClients(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

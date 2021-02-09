@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <!DOCTYPE html>
 <html>
@@ -17,8 +17,8 @@
 
 	<%
 		String mail = (String)session.getAttribute("email");
-		if(mail.isEmpty() || mail==""){
-			response.sendRedirect("index.jsp");
+		if(mail==null || mail=="" || mail.isEmpty()){
+			response.sendRedirect("Login.jsp");
 		}
 	%>
 
@@ -32,7 +32,7 @@
 	 	</div>
 	 	
 	 	<div class="text-left"">
-	 		<a href="${pageContext.request.contextPath}/Home.jsp">&#8592 Back</a>
+	 		<a href="${pageContext.request.contextPath}/HomePage.jsp">&#8592 Back</a>
 	 	</div>
 	 	
 	 	<p>${Message}</p>

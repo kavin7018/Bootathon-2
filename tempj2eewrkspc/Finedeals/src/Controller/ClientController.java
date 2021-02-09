@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Entity.Clients;
+import Entity.Offers;
 import Entity.Register;
 import dao.ClientDAO;
 import dao.ClientDAOImpl;
 import dao.RegisterDAO;
-import dao.RegisterDAOImpl;
 
 public class ClientController extends HttpServlet{
 
@@ -33,10 +34,10 @@ public class ClientController extends HttpServlet{
 		if(action==null) {
 			action="home";
 		}
-		
+	
 		switch(action) {
 		case "home":
-			resp.sendRedirect("Home.jsp");
+			gotoHome(req,resp);
 			break;
 			
 		case "LIST":
@@ -48,7 +49,7 @@ public class ClientController extends HttpServlet{
 			break;
 			
 		default:
-			resp.sendRedirect("Home.jsp");
+			resp.sendRedirect("HomePage.jsp");
 			break;
 		}
 	}
@@ -94,5 +95,12 @@ public class ClientController extends HttpServlet{
 		req.setAttribute("client", clients);
 		dispatch = req.getRequestDispatcher("/views/ProfileEdit.jsp");
 		dispatch.forward(req, resp);
+	}
+	
+	public void gotoHome(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<Offers> offers = clientdao.getOffers(); 
+		req.setAttribute("offers",offers);
+		dispatch = req.getRequestDispatcher("HomePage.jsp"); 
+		dispatch.forward(req,resp);
 	}
 }

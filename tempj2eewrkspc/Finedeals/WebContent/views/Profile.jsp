@@ -12,7 +12,7 @@
 	<%
 		String mail = (String)session.getAttribute("email");
 		if(mail==null || mail=="" || mail.isEmpty()){
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("Login.jsp");
 		}
 	%>
 	<div class="container">
@@ -20,7 +20,7 @@
 				<a href="${pageContext.request.contextPath}/ClientController?action=EDIT&id=${client.email}">Edit</a>
 		 </div>
 		 
-		<a href="${pageContext.request.contextPath}/Home.jsp">&#8592 Back</a>
+		<a href="${pageContext.request.contextPath}/HomePage.jsp">&#8592 Back</a>
 		<p>${message}</p>
 		<h3>My profile</h3>
 		

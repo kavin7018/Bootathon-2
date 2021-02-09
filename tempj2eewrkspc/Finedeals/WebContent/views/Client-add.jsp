@@ -11,7 +11,7 @@
 	<%
 		String mail = (String)session.getAttribute("email");
 		if(mail.isEmpty() || mail==""){
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("Login.jsp");
 		}
 	%>
 	
