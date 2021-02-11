@@ -412,7 +412,8 @@ body #container .item .price{
 body #container .item .Description{
 	margin-top:10px;
 	font-size:8px;
-	line-height: 1.6;	
+	line-height: 1.6;
+	height:26px;
 }
 
 body #container .item a{

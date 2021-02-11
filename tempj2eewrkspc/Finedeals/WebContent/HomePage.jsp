@@ -47,9 +47,9 @@
 			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item01" onclick="location.href = 'coupons.jsp?type=offer'">Offers</a>
-					<a class="dropdown-item02" onclick="location.href = 'coupons.jsp?type=coupon'">Coupon codes</a>
-					<a class="dropdown-item03" onclick="location.href = 'coupons.jsp?type=giftcard'">Gift Cards</a>
+					<a class="dropdown-item01" onclick="location.href = 'Menus/services.jsp?type=offer'">Offers</a>
+					<a class="dropdown-item02" onclick="location.href = 'Menus/services.jsp?type=coupon'">Coupon codes</a>
+					<a class="dropdown-item03" onclick="location.href = 'Menus/services.jsp?type=giftcard'">Gift Cards</a>
 				</div>
 			</li>
 		
@@ -58,7 +58,7 @@
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Upload Deal</a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="offers.jsp">Upload offers</a>
-					<a class="dropdown-item" href="coupons.jsp">Upload coupons</a>
+					<a class="dropdown-item" href="uploaddeals/coupons.jsp">Upload coupons</a>
 					<a class="dropdown-item" href="gifts.jsp">Upload gift cards</a>
 				</div>
 			</li>
@@ -101,12 +101,12 @@
  	<!-- Coupon grids -->
 	<div id="container">
 	<c:forEach items="${offers}" var="offer">
-		<div class="item">
-			<div id="votes" style="display:inline-block;float:right">
+		<div class="item" style="height:326px">
+			<div id="votes" style="height:30px;display:inline-block;float:right">
 				<button id="downvote" onclick="downvote(${offer.id},this)" style="padding: 2px;background-color: #FFF;text-align: center;display:inline-block;width:30px;height:30px;"><span>&#128078</span></button>
-				<div id="downvote_count" style="padding: 2px;background-color: #fcf0cf;text-align: center;display:inline-block;width:30px;height:30px;">${offer.downvotes}</div>
+				<div id="downvote_count" style="padding: 4px;background-color: #fcf0cf;text-align: center;display:inline-block;width:30px;height:30px;">${offer.downvotes}</div>
 				<button id="upvote" onclick="upvote(${offer.id},this)" style="background-color: #FFF; text-align:center;display:inline-block;width:30px;height:30px;"><div>&#128077</div></button>
-				<div id="upvote_count" style="padding: 2px;background-color: #fcf0cf; text-align: center;display:inline-block;width:30px;height:30px;">${offer.upvotes}</div>
+				<div id="upvote_count" style="padding: 4px;background-color: #fcf0cf; text-align: center;display:inline-block;width:30px;height:30px;">${offer.upvotes}</div>
 			</div>
 			<img alt="Product_img" src="images/finedeals_img.jpg">
 			<div class="Name">${offer.company}</div>

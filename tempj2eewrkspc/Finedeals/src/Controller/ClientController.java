@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Entity.Clients;
-import Entity.Offers;
+import Entity.Coupon;
 import Entity.Register;
 import dao.ClientDAO;
 import dao.ClientDAOImpl;
@@ -98,7 +98,7 @@ public class ClientController extends HttpServlet{
 	}
 	
 	public void gotoHome(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Offers> offers = clientdao.getOffers(); 
+		List<Coupon> offers = clientdao.getOffers(); 
 		req.setAttribute("offers",offers);
 		dispatch = req.getRequestDispatcher("HomePage.jsp"); 
 		dispatch.forward(req,resp);

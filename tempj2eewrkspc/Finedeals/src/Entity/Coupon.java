@@ -1,6 +1,6 @@
 package Entity;
 
-public class Offers {
+public class Coupon {
 	int id = 0;
 	String company = "";
 	String url = "";
@@ -9,8 +9,6 @@ public class Offers {
 	String desc = "";
 	int upvotes = 0;
 	int downvotes = 0;
-
-	
 
 	public int getId() {
 		return id;

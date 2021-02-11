@@ -45,4 +45,14 @@
   	<url-pattern>/RegistrationController</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>CouponController</servlet-name>
+  	<servlet-class>Controller.CouponController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>CouponController</servlet-name>
+  	<url-pattern>/CouponController</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

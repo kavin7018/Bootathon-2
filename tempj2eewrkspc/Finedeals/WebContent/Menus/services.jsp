@@ -19,11 +19,8 @@
 function searchInfo(){
 	var request=new XMLHttpRequest();
 	var name=document.vinform.name.value;
-	console.log("Before request");
 	var type ="<%=request.getParameter("type")%>";
-	var url="coupon_index.jsp?val="+name+"&type="+type;
-	console.log("Inside coupons.jsp, type : "+type);
-	
+	var url="services_index.jsp?val="+name+"&type="+type;
 	
 	try{
 		request.onreadystatechange=function(){
@@ -43,7 +40,7 @@ function searchInfo(){
 
 
 <title>website</title>
-<link href="CouponsStyle.css" rel="stylesheet">
+<link href="../styles/ServicesStyle.css" rel="stylesheet">
 </head>
 
 <body>

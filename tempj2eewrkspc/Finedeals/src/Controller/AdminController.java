@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Entity.Clients;
-import Entity.Offers;
+import Entity.Coupon;
 import Entity.Register;
 import dao.AdminDAO;
 import dao.AdminDAOImpl;
@@ -99,7 +99,7 @@ public class AdminController extends HttpServlet{
 	
 	public void getFrontPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		clientdao = new ClientDAOImpl();
-		List<Offers> offers = clientdao.getOffers(); 
+		List<Coupon> offers = clientdao.getOffers(); 
 		req.setAttribute("offers",offers);
 		dispatch = req.getRequestDispatcher("HomePage.jsp"); 
 		dispatch.forward(req,resp);

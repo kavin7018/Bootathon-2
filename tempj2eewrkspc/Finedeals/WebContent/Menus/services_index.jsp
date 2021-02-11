@@ -10,6 +10,7 @@
 <%
 String name = request.getParameter("val");
 String type = request.getParameter("type");
+
 if(name=="" || name.equals("")){
 	
 }
@@ -19,7 +20,8 @@ try {
 	Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "kavin", "admin");
 	String uppercase = name.toUpperCase();
 	String lowercase = name.toLowerCase();
-	String Query = "select * FROM coupons WHERE type='"+type+"' and company like '"+uppercase+"%' or company like '"+lowercase+"%' or company like '"+name+"%'";        
+	String Query = "select * FROM coupons WHERE type='"+type+"' and (company like '"+uppercase+"%' or company like '"+lowercase+"%' or company like '"+name+"%')";
+	System.out.print(Query);
 	PreparedStatement ps = con.prepareStatement(Query);     
 	ResultSet rs = ps.executeQuery();
 	
@@ -59,7 +61,7 @@ try {
 	out.print("</div>");
 
 	out.print("<div>");
-	out.print("<a href='" + rs.getString(2) + "'><button class='buy-button'>LINK</button></a>");
+	out.print("<a href=https://'" + rs.getString(2) + "'><button class='buy-button'>LINK</button></a>");
 	out.print("</div>");
 
 	out.print("</div></td>");

@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Entity.Clients;
-import Entity.Offers;
+import Entity.Coupon;
 import Entity.Register;
 import Util.DBConnectionUtil;
 
 public class ClientDAOImpl implements ClientDAO {
 	Clients clients=null;
-	List<Offers> list = null;
-	Offers offers = null;
+	List<Coupon> list = null;
+	Coupon offers = null;
 	String Query=null;
 	Connection connection=null;
 	PreparedStatement preparedstatement = null;
@@ -68,15 +68,15 @@ public class ClientDAOImpl implements ClientDAO {
 	}
 
 	@Override
-	public List<Offers> getOffers() {
+	public List<Coupon> getOffers() {
 		list = new ArrayList<>();
 		try {
-			Query = "select * from coupons";
+			Query = "select * from coupons order by id DESC";
 			connection = DBConnectionUtil.OpenConnection();
 			statement = connection.createStatement();
 			ResultSet res = statement.executeQuery(Query);
 			while(res.next()) {
-				offers = new Offers();
+				offers = new Coupon();
 				String company = res.getString("company");
 				offers.setId(Integer.parseInt(res.getString("id")));
 				offers.setCompany(company);

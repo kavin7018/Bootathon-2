@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Entity.Login;
-import Entity.Offers;
+import Entity.Coupon;
 import dao.ClientDAO;
 import dao.ClientDAOImpl;
 import dao.LoginDAO;
@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = -7036460655583227160L;
 	ClientDAO clientDAO = null;
 	LoginDAO loginDAO = null;
-	List<Offers> list = null;
+	List<Coupon> list = null;
 	RequestDispatcher dispatch = null;
 	public LoginController(){
 		loginDAO = new loginDAOImpl();

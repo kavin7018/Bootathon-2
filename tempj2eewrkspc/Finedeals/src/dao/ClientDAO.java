@@ -3,7 +3,7 @@ package dao;
 import java.util.List;
 
 import Entity.Clients;
-import Entity.Offers;
+import Entity.Coupon;
 import Entity.Register;
 
 public interface ClientDAO {
@@ -11,5 +11,5 @@ public interface ClientDAO {
 	
 	boolean update(Register register);
 	
-	List<Offers> getOffers();
+	List<Coupon> getOffers();
 }
