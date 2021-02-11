@@ -19,8 +19,7 @@
 		<div class="float-right">
 				<a href="${pageContext.request.contextPath}/ClientController?action=EDIT&id=${client.email}">Edit</a>
 		 </div>
-		 
-		<a href="${pageContext.request.contextPath}/HomePage.jsp">&#8592 Back</a>
+		<a href="${pageContext.request.contextPath}/ClientController?action=home">&#8592 Back</a>
 		<p>${message}</p>
 		<h3>My profile</h3>
 		

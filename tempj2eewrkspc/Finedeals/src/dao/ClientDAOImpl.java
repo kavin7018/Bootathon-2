@@ -78,11 +78,13 @@ public class ClientDAOImpl implements ClientDAO {
 			while(res.next()) {
 				offers = new Offers();
 				String company = res.getString("company");
+				offers.setId(Integer.parseInt(res.getString("id")));
 				offers.setCompany(company);
 				offers.setUrl(res.getString("url"));
 				offers.setCode(res.getString("code"));
 				offers.setDesc(res.getString("description"));
-				offers.setVotes(res.getString("votes"));
+				offers.setUpvotes(Integer.parseInt(res.getString("upvotes")));
+				offers.setDownvotes(Integer.parseInt(res.getString("downvotes")));
 				list.add(offers);
 			}
 		} 

@@ -32,7 +32,7 @@
 	 	</div>
 	 	
 	 	<div class="text-left"">
-	 		<a href="${pageContext.request.contextPath}/HomePage.jsp">&#8592 Back</a>
+	 		<a href="${pageContext.request.contextPath}/AdminPage.jsp">&#8592 Back</a>
 	 	</div>
 	 	
 	 	<p>${Message}</p>

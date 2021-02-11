@@ -31,7 +31,6 @@ public class AdminController extends HttpServlet{
 
 	public AdminController() {
 		adminDAO = new AdminDAOImpl();
-		
 	}
 	
 	@Override
@@ -39,7 +38,7 @@ public class AdminController extends HttpServlet{
 		
 		String action = req.getParameter("action");
 		if(action==null) {
-			action="LIST";
+			action="Front";
 		}
 		
 		switch(action) {

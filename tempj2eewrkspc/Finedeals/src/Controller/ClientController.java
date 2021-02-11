@@ -88,7 +88,7 @@ public class ClientController extends HttpServlet{
 		dispatch = req.getRequestDispatcher("/views/Profile.jsp");
 		dispatch.forward(req, resp);
 	}
-	
+	 
 	public void getSingleClient(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String email = req.getParameter("email");
 		clients = clientdao.get_details_myprofile(email);

@@ -44,7 +44,7 @@ public class LoginController extends HttpServlet {
 		if(status=="Admin") {
 			session.setAttribute("email", login.getEmail());
 			session.setAttribute("password", login.getPassword());
-			//resp.sendRedirect("HomePage.jsp");
+			//resp.sendRedirect("HomePage.jsp"); 
 			resp.sendRedirect("AdminController?action=Front");
 			//resp.sendRedirect("ClientController?action=home");
 		}

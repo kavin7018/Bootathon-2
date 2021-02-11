@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.searchbox {
+	postion: relative;
+	background:#FFFF00;
+	height: 60px;
+	padding: 10px 20px 10px 10px;
+	text-align: left;
+	z-index: 1;
+	margin: 0 auto;
+	width: calc(100% - 60px);
+	
+}
+.search-bar li a {
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	display: block;
+	padding: 0 25px;
+	font-size: 14px;
+	line-height: 30px;
+	position: relative;
+	z-index: 1;
+}
+
+input{
+	border: 3px solid #32e17c;
+	height: 40px;
+	width: 300px;
+	border-radius:50px;
+	padding: 0px 10px;
+}
+body {
+	background-colour: #fff;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+}
+
+.custom-padding {
+	padding-top: 25px;
+}
+nav {
+	position: relative;
+	padding: 10px 20px 10px 10px;
+	text-align: right;
+	z-index: 1;
+	background: #333;
+	margin: 0 auto;
+	width: calc(100% - 60px);
+}
+
+
+
+.card {
+	
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #ff8000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.center{
+	postion: retlative;
+	left: 30px;
+}
+
+
+.product-list{
+	margin-top:55px;
+	background-color:#dfe6e9;
+	padding: 3em;
+}
+.product-list .card{
+	background-color: white;
+	border-radius: 10px;
+	padding:1em;
+	box-shadow: 0px 10px 5px #b2bec3;
+	text-align: center;
+	front-family:'Poppins';
+	
+}
+.card .title {
+	font-size: 18px;
+	font-weight:bold;
+}
+.card img {
+	max-width: 100%;
+	border-radius:5px;
+}
+.card .text {
+	text-align:left;
+	margin-left:2em;
+	margin-bottom:0.5em;
+	front-size:12px;
+}
+.card .comp {
+	text-color:#ff0000;
+	text-align:center;
+	margin-left:2em;
+	margin-bottom:0.5em;
+	front-size:20px;
+}
+.buy-button {
+	background-color: #f9ca24;
+	border:none;
+	padding:1em;
+	border-radius: 5px;
+	font-weight:bold;
+}
+.buy-button:hover {
+	box-shadow: 0px 5px 5px #b2bec3;
+	color: #eb4d4b;
+}
+.product-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap:20px;
+	grid-row-gap:20px;
+}
