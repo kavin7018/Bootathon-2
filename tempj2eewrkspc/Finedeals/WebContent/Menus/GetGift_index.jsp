@@ -3,7 +3,7 @@
 	<%
 		String mail = (String)session.getAttribute("email");
 		if(mail==null || mail=="" || mail.isBlank()){
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("../Login.jsp");
 		}
 	%>
 
@@ -20,8 +20,7 @@ try {
 	Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "kavin", "admin");
 	String uppercase = name.toUpperCase();
 	String lowercase = name.toLowerCase();
-	String Query = "select * FROM coupons WHERE type='"+type+"' and (company like '"+uppercase+"%' or company like '"+lowercase+"%' or company like '"+name+"%')";
-	System.out.print(Query);
+	String Query = "select * FROM gift WHERE company like '"+uppercase+"%'";
 	PreparedStatement ps = con.prepareStatement(Query);     
 	ResultSet rs = ps.executeQuery();
 	
@@ -41,7 +40,7 @@ try {
 	out.print("<td><div class='card'>");
 
 	out.print("<div class='title'>");
-	out.print("COUPON");
+	out.print("GiftCards");
 	out.print("</div>");
 
 	out.print("<div class='dlink'>");

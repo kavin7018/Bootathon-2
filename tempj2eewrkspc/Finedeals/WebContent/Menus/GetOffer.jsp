@@ -20,7 +20,7 @@ function searchInfo(){
 	var request=new XMLHttpRequest();
 	var name=document.vinform.name.value;
 	var type ="<%=request.getParameter("type")%>";
-	var url="services_index.jsp?val="+name+"&type="+type;
+	var url="GetOffer_index.jsp?val="+name+"&type="+type;
 	
 	try{
 		request.onreadystatechange=function(){

@@ -55,4 +55,24 @@
   	<url-pattern>/CouponController</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>OfferController</servlet-name>
+  	<servlet-class>Controller.OfferController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>OfferController</servlet-name>
+  	<url-pattern>/OfferController</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>GiftController</servlet-name>
+  	<servlet-class>Controller.GiftController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>GiftController</servlet-name>
+  	<url-pattern>/GiftController</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

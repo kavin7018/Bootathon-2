@@ -47,9 +47,9 @@
 			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item01" onclick="location.href = 'Menus/services.jsp?type=offer'">Offers</a>
-					<a class="dropdown-item02" onclick="location.href = 'Menus/services.jsp?type=coupon'">Coupon codes</a>
-					<a class="dropdown-item03" onclick="location.href = 'Menus/services.jsp?type=giftcard'">Gift Cards</a>
+					<a class="dropdown-item01" onclick="location.href = 'Menus/GetOffer.jsp?type=offer'">Offers</a>
+					<a class="dropdown-item02" onclick="location.href = 'Menus/GetCoupon.jsp?type=coupon'">Coupon codes</a>
+					<a class="dropdown-item03" onclick="location.href = 'Menus/GetGift.jsp?type=giftcard'">Gift Cards</a>
 				</div>
 			</li>
 		
@@ -57,9 +57,9 @@
 			<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Upload Deal</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="offers.jsp">Upload offers</a>
+					<a class="dropdown-item" href="uploaddeals/offer.jsp">Upload offers</a>
 					<a class="dropdown-item" href="uploaddeals/coupons.jsp">Upload coupons</a>
-					<a class="dropdown-item" href="gifts.jsp">Upload gift cards</a>
+					<a class="dropdown-item" href="uploaddeals/gift.jsp">Upload gift cards</a>
 				</div>
 			</li>
 		
@@ -103,9 +103,9 @@
 	<c:forEach items="${offers}" var="offer">
 		<div class="item" style="height:326px">
 			<div id="votes" style="height:30px;display:inline-block;float:right">
-				<button id="downvote" onclick="downvote(${offer.id},this)" style="padding: 2px;background-color: #FFF;text-align: center;display:inline-block;width:30px;height:30px;"><span>&#128078</span></button>
+				<button id="downvote" onclick="downvote(${offer.downvotes},${offer.id},this)" style="padding: 2px;background-color: #FFF;text-align: center;display:inline-block;width:30px;height:30px;"><span>&#128078</span></button>
 				<div id="downvote_count" style="padding: 4px;background-color: #fcf0cf;text-align: center;display:inline-block;width:30px;height:30px;">${offer.downvotes}</div>
-				<button id="upvote" onclick="upvote(${offer.id},this)" style="background-color: #FFF; text-align:center;display:inline-block;width:30px;height:30px;"><div>&#128077</div></button>
+				<button id="upvote" onclick="upvote(${offer.upvotes},${offer.id},this)" style="background-color: #FFF; text-align:center;display:inline-block;width:30px;height:30px;"><div>&#128077</div></button>
 				<div id="upvote_count" style="padding: 4px;background-color: #fcf0cf; text-align: center;display:inline-block;width:30px;height:30px;">${offer.upvotes}</div>
 			</div>
 			<img alt="Product_img" src="images/finedeals_img.jpg">
@@ -120,30 +120,36 @@
 </body>
 <script>
 
-function upvote(x,y){
-	$('#container').on('click','upvote',function(){		//x-id,y-this
-		console.log(y);
-	});
-	
-	/*var request=new XMLHttpRequest(); 
-	var url="Like.jsp?id="+parseInt(y)+"&val="+val;
+function upvote(z,x,y){
+	var request=new XMLHttpRequest();
+	var val = parseInt(z)+1;
+	var url="Like.jsp?id="+parseInt(x)+"&val="+val+"&type=upvotes";
+	console.log("HI");
+	var temp = $('#upvote_count').text();
+	temp = val;
+	console.log()
+	$(this).parent().find('#upvote_count').html(0);
  	try{
-		request.onreadystatechange=function(){
-			if(request.readyState==4){  
-				var val=request.responseText;  
-				document.getElementById('upvote_count').innerHTML=val;  
-			}
-		} 
 		request.open("GET",url,true);  
 		request.send();  
 	}
 	catch(e){
 		alert("Unable to connect to server");
-	} */
+	}
 }
 
-function downvote(y,x){
-	console.log("Downvote :"+this);
+function downvote(z,x,y){
+	var request=new XMLHttpRequest();
+	var val = parseInt(z)+1;
+	var url="Like.jsp?id="+parseInt(x)+"&val="+val+"&type=downvotes";
+ 	try{
+		request.open("GET",url,true);  
+		request.send();  
+	}
+	catch(e){
+		alert("Unable to connect to server");
+	}
 }
+
 </script>
 </html>
